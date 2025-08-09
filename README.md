@@ -1,38 +1,41 @@
-# Dawn
+# justin.pecott.net-Dawn
 
 A highly functional [Ghost](https://github.com/TryGhost/Ghost) theme that adapts to the reader's preferences. Let them read, search, subscribe, navigate, and more with ease.
 
-**Demo: https://dawn.ghost.io**
+Customized fork of [Dawn](https://github.com/TryGhost/Dawn)
 
-# Instructions
+## Development
 
-1. [Download this theme](https://github.com/TryGhost/Dawn/archive/main.zip)
-2. Log into Ghost, and go to the `Design` settings area to upload the zip file
-
-# Development
-
-Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the project's root directory:
 
 ```bash
-# Install
+# install dependencies
 yarn
 
-# Run build & watch for changes
+# run development server
 yarn dev
 ```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+Now you can edit files in `packages/<theme-name>/assets/css/` or `packages/<theme-name>/assets/js/`, which will be compiled to `packages/<theme-name>/assets/built/` automatically.
 
-The `zip` Gulp task packages the theme files into `dist/dawn.zip`, which you can then upload to your site.
+To run a theme locally, you need to symlink a theme to your local Ghost site.
 
 ```bash
-yarn zip
+# run a theme locally
+yarn symlink --theme <theme-name> --site /dir/to/your/ghost-site
 ```
 
-# Contribution
+Or if you're running a Ghost instance via the CLI:
 
-This repo is synced automatically with [TryGhost/Themes](https://github.com/TryGhost/Themes) monorepo. If you're looking to contribute or raise an issue, head over to the main repository [TryGhost/Themes](https://github.com/TryGhost/Themes) where our official themes are developed.
+```bash
+yarn symlink --theme <theme-name> --site /dir/to/ghost-instance
+```
 
-# Copyright & License
+Restart your Ghost instance and the theme will be listed in the `Design` settings.
 
-Copyright (c) 2013-2025 Ghost Foundation - Released under the [MIT license](LICENSE).
+To create an installable theme zip file in `packages/<theme-name>/dist/`:
+
+```bash
+# create .zip file
+yarn zip --theme <theme-name>
+```
