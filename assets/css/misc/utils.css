@@ -23,6 +23,10 @@
     padding-bottom: 50%;
 }
 
+.u-placeholder.portrait::before {
+    padding-bottom: 75%;
+}
+
 .u-placeholder.rectangle::before {
     padding-bottom: 62.5%;
 }
