@@ -4,12 +4,31 @@ A highly functional [Ghost](https://github.com/TryGhost/Ghost) theme that adapts
 
 Customized fork of [Dawn](https://github.com/TryGhost/Dawn)
 
+## Auto-Deployment
+
+This repository is configured with GitHub Actions to automatically deploy the theme to Ghost on every push to the `main` branch.
+
+### Setup Required Secrets
+
+To enable auto-deployment, configure these secrets in your GitHub repository (`Settings` → `Secrets and variables` → `Actions`):
+
+- **`GHOST_ADMIN_API_URL`**: Your Ghost Admin API URL (found in Ghost Admin → Integrations)
+- **`GHOST_ADMIN_API_KEY`**: Your Ghost Admin API Key (found in Ghost Admin → Integrations)
+
+### How it Works
+
+1. Push changes to the `main` branch
+2. GitHub Actions automatically:
+   - Installs dependencies
+   - Builds theme assets
+   - Deploys to your Ghost site using the [official TryGhost action](https://github.com/TryGhost/action-deploy-theme)
+
 ## Development
 
-You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the project's root directory:
+You'll need [Node](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed. After that, from the project's root directory:
 
 ```bash
-# install dependencies
+# Install dependencies
 yarn install
 
 # Validate theme
@@ -18,33 +37,25 @@ yarn test
 # Build assets
 yarn build
 
-# Development with live reload. This is not useful currently as we don't have a working local installation to test against.
+# Development with live reload
 yarn dev
 
-# Build and package theme for upload
+# Build and package theme for manual upload
 yarn zip
 ```
 
-Now you can edit files in `packages/<theme-name>/assets/css/` or `packages/<theme-name>/assets/js/`, which will be compiled to `packages/<theme-name>/assets/built/` automatically.
+### File Structure
 
-To run a theme locally, you need to symlink a theme to your local Ghost site.
+- Edit CSS files in `assets/css/` - compiled to `assets/built/screen.css`
+- Edit JS files in `assets/js/` - compiled to `assets/built/main.min.js`
+- Theme templates are `.hbs` files in the root and `partials/` directory
 
-```bash
-# run a theme locally
-yarn symlink --theme <theme-name> --site /dir/to/your/ghost-site
-```
+### Manual Installation
 
-Or if you're running a Ghost instance via the CLI:
-
-```bash
-yarn symlink --theme <theme-name> --site /dir/to/ghost-instance
-```
-
-Restart your Ghost instance and the theme will be listed in the `Design` settings.
-
-To create an installable theme zip file in `packages/<theme-name>/dist/`:
+To create an installable theme zip file:
 
 ```bash
-# create .zip file
-yarn zip --theme <theme-name>
+yarn zip
 ```
+
+Upload the generated `dist/justin-pecott-net.zip` file to Ghost Admin → Design → Change theme.
