@@ -30,6 +30,7 @@
 /* Custom footer layout for centered elements with bullet separator */
 .gh-foot .gh-foot-inner {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 1.2rem;
