@@ -1,6 +1,6 @@
 {
-    "name": "justin-pecott-net-dawn",
-    "description": "Customized Dawn theme for justin.pecott.net",
+    "name": "justin-pecott-net",
+    "description": "Theme for justin.pecott.net - Customized from the Ghost Dawn theme",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -17,7 +17,7 @@
         "theme",
         "ghost-theme"
     ],
-    "docs": "https://dawn.ghost.io/about/",
+    "docs": "https://justin.pecott.net/about/",
     "config": {
         "posts_per_page": 5,
         "image_sizes": {
