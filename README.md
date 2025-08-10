@@ -10,10 +10,19 @@ You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp]
 
 ```bash
 # install dependencies
-yarn
+yarn install
 
-# run development server
+# Validate theme
+yarn test
+
+# Build assets
+yarn build
+
+# Development with live reload. This is not useful currently as we don't have a working local installation to test against.
 yarn dev
+
+# Build and package theme for upload
+yarn zip
 ```
 
 Now you can edit files in `packages/<theme-name>/assets/css/` or `packages/<theme-name>/assets/js/`, which will be compiled to `packages/<theme-name>/assets/built/` automatically.
