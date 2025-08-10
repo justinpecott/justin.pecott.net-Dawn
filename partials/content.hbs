@@ -35,7 +35,7 @@
             {{#if feature_image}}
             {{#unless no_image}}
                 <figure class="single-media kg-width-{{width}}">
-                    <div class="u-placeholder horizontal">
+                    <div class="u-placeholder {{#match width "portrait"}}portrait{{else}}horizontal{{/match}}">
                         <img
                             class="u-object-fit"
                             srcset="{{> srcset}}"
