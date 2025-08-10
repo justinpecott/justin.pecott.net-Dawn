@@ -26,13 +26,13 @@ yarn install
 yarn test
 
 # Build assets only (2s)
-npx gulp build
+yarn build
 
 # Development with live reload. This is not useful currently as we don't have a working local installation to test against.
 yarn dev
 
 # Build and package theme for upload (3s)
-yarn zip --theme justin-pecott-net
+yarn zip
 ```
 
 ## Project Architecture
@@ -47,7 +47,7 @@ yarn zip --theme justin-pecott-net
 
 ```
 assets/
-├── built/           # Generated files (DO NOT EDIT)
+├── built/          # Generated files (DO NOT EDIT)
 ├── css/            # Source CSS files
 ├── fonts/          # Font files
 ├── images/         # Theme images
@@ -110,8 +110,8 @@ This validates Ghost theme compliance and compatibility.
 ### Build Validation
 
 ```bash
-npx gulp build             # Test CSS/JS compilation
-yarn zip justin-pecott-net # Test full packaging
+yarn build  # Test CSS/JS compilation
+yarn zip    # Test full packaging
 ```
 
 ## Common Build Issues & Solutions
@@ -136,7 +136,7 @@ yarn install  # Reinstall if node_modules issues
 
 ### Theme Upload Issues
 
--   Use `yarn zip` to create `dist/dawn.zip`
+-   Use `yarn zip` to create `dist/justin-pecott-net.zip`
 -   Upload the generated zip file to Ghost admin
 -   Ensure all required template files are present
 
@@ -172,9 +172,9 @@ yarn install  # Reinstall if node_modules issues
 ## Tips for Efficient Development
 
 1. **Test theme with `yarn test`** before making major changes
-2. **Use `yarn zip --theme justin-pecott-net`** to package for Ghost upload
+2. **Use `yarn zip`** to package for Ghost upload
 3. **Don't edit `assets/built/`** - files are auto-generated
 4. **Check gscan output** for Ghost compatibility issues
-5. **Validate builds frequently** with `npx gulp build`
+5. **Validate builds frequently** with `yarn build`
 
 This theme follows Ghost's best practices and uses industry-standard tooling. The build system is stable and well-tested.

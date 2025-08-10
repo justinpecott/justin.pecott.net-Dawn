@@ -103,8 +103,9 @@
     },
     "scripts": {
         "dev": "gulp",
+        "build": "npx gulp build",
         "test": "gscan .",
-        "zip": "gulp zip"
+        "zip": "gulp zip --theme justin-pecott-net"
     },
     "devDependencies": {
         "@tryghost/shared-theme-assets": "2.5.1",
