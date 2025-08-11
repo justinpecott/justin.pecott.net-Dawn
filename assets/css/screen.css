@@ -22,11 +22,6 @@
 @import "misc/animations.css";
 @import "misc/dark.css";
 
-.kg-width-full img,
-.kg-width-wide img {
-    /* required by gscan to properly validate the theme */
-}
-
 /* Custom footer layout for centered elements with bullet separator */
 .gh-foot .gh-foot-inner {
     display: flex;

@@ -37,10 +37,10 @@ yarn zip
 
 ## Project Architecture
 
-### Template Structure (33 .hbs files)
+### Template Structure
 
 -   **Root templates**: `index.hbs`, `post.hbs`, `page.hbs`, `tag.hbs`, `author.hbs`, `default.hbs`
--   **Custom templates**: `custom-full-feature-image.hbs`, `custom-narrow-feature-image.hbs`, `custom-no-feature-image.hbs`
+-   **Custom templates**: `custom-no-feature-image.hbs`, `custom-portrait-feature-image.hbs`
 -   **Partials directory**: `partials/` contains reusable components like `loop.hbs`, `pagination.hbs`, `comments.hbs`
 
 ### Asset Structure
